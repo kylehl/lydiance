@@ -12,3 +12,9 @@ $(function() {
     }
   });
 });
+
+$(document).ready(function() {
+    $('#showlist').click(function() {
+         $('.ytlist').toggle("slide");
+    });
+});
