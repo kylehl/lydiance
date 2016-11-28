@@ -15,6 +15,6 @@ $(function() {
 
 $(document).ready(function() {
     $('#showlist').click(function() {
-         $('.ytlist').toggle("slide");
+         $('.ytlist').slideUp('fast');
     });
 });
