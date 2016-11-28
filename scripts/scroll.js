@@ -14,7 +14,7 @@ $(function() {
 });
 
 $(document).ready(function() {
-    $('#showlist').click(function() {
-         $('.ytlist').slideUp('fast');
+    $('#showlist').one("click", function() {
+         $('.ytlist').toggle("slide");
     });
 });
