@@ -29,7 +29,7 @@ function handleAuthResult(authResult) {
     // Authorization was successful. Hide authorization prompts and show
     // content that should be visible after authorization succeeds.
     $('.pre-auth').hide();
-    $('.post-auth').toggle("slide");
+    $('.post-auth').slideDown("slow");
     loadAPIClientInterfaces();
   } else {
     // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
