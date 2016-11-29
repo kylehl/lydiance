@@ -1,25 +1,46 @@
-function keyWordSearch(){
-    gapi.client.setApiKey('AIzaSyAYquJl6tEYy2oMlNjXGneGKC7qJfCgTXA');
-    gapi.client.load('youtube', 'v3', function(){
-            makeRequest();
-    });
+// Helper function to display JavaScript value on HTML page.
+function showResponse(response) {
+    var responseString = JSON.stringify(response, '', 2);
+    document.getElementById('response').innerHTML += responseString;
 }
-function makeRequest(){
-    var q = $('#query').val();
-    var request = gapi.client.youtube.search.list({
-            q: q,
-            part: 'snippet', 
-            maxResults: 10
-    });
-    request.execute(function(response)  {                                                                                    
-		$('#results').empty();
-		var srchItems = response.result.items;                      
-		$.each(srchItems, function(index, item){
-		vidTitle = item.snippet.title;  
-		vidThumburl =  item.snippet.thumbnails.default.url;                 
-		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:204px;height:128px"></pre>';                   
 
-		$('#results').append('<pre>' + vidTitle + vidThumbimg +   '</pre>');                      
-		})
-	})  
+// Called automatically when JavaScript client library is loaded.
+function onClientLoad() {
+    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+}
+
+// Called automatically when YouTube API interface is loaded (see line 9).
+function onYouTubeApiLoad() {
+    gapi.client.setApiKey('AIzaSyAYquJl6tEYy2oMlNjXGneGKC7qJfCgTXA');
+}
+
+// Wait for button trigger
+$(document).ready(function(){
+    $('#search-button').click(function(){
+		if ($.trim($("#query").val()) === "") {
+			alert('You did not fill out the required field.');
+			return false;
+		}
+		else {
+			var entry = document.getElementById('query').value;
+			search(entry);
+		}
+    });
+});
+
+function search(entry) {
+    // Use the JavaScript client library to create a search.list() API call.
+    var request = gapi.client.youtube.search.list({
+        part: 'snippet',
+        q: entry
+    });
+    
+    // Send the request to the API server,
+    // and invoke onSearchResponse() with the response.
+    request.execute(onSearchResponse);
+}
+
+// Called automatically with the response of the YouTube API request.
+function onSearchResponse(response) {
+    showResponse(response);
 }
