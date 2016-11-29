@@ -54,9 +54,9 @@
                   <form role="form">
                     <div class="form-group">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for the root of your generated playlist">
+                        <input type="text" id="queryinput" class="form-control" placeholder="Search for the root of your generated playlist">
                         <span class="input-group-btn">
-                          <a class="btn btn-success" type="submit" id="showlist">Go</a>
+                          <a class="btn btn-success" type="submit" id="showlist" onclick="javascript:SearchYouTube(document.getElementById('queryinput').value)">Go</a>
                         </span>
                       </div>
                     </div>
@@ -64,7 +64,7 @@
                 </div>
               </div>
               <div class="row ytlist" style="display: none;">
-                <div class="col-md-12">
+                <div class="col-md-12" id="search-results-block">
                   <p>Hi this is working! Or not? Or maybe...</p>
                 </div>
               </div>
