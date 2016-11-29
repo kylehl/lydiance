@@ -1,5 +1,6 @@
 // Helper function to display JavaScript value on HTML page.
 function showResponse(response) {
+	console.log(response);
     var responseString = JSON.stringify(response, '', 2);
     document.getElementById('response').innerHTML += responseString;
 }
