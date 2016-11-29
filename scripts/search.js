@@ -23,8 +23,8 @@ $(document).ready(function(){
 			return false;
 		}
 		else {
-			var entry = document.getElementById('query').value;
-			search(entry);
+			//var entry = document.getElementById('query').value;
+			//search(entry);
 		}
     });
 });
