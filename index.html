@@ -47,25 +47,25 @@
               <br>
               <a class="btn btn-lg btn-default" href="#" id="login-link">Connect YouTube</a>
             </div>
-            <div class="post-auth" style="display: none;">
-              <p>Step 1: Search for a track that you want Lydiance to make a playlist from.</p>
-              <div class="col-md-offset-3 col-md-6">
-                <form role="form">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input type="text" name="query" id="query" class="form-control" placeholder="Search for the root of your generated playlist">
-                      <span class="input-group-btn">
-                        <a class="btn btn-success" type="submit" id="search-button">Go</a>
-                      </span>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
-		<div class="row ytlist" style="display: none;">
-		  <div class="col-md-12">
+		<div class="row">
+		  <div class="post-auth" style="display: none;">
+            <p>Step 1: Search for a track that you want Lydiance to make a playlist from.</p>
+            <div class="col-md-offset-3 col-md-6">
+              <form role="form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" name="query" id="query" class="form-control" placeholder="Search for the root of your generated playlist">
+                    <span class="input-group-btn">
+                      <a class="btn btn-success" type="submit" id="search-button">Go</a>
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+		  <div class="col-md-12 ytlist" style="display: none;">
             <p>Search Results</p>
             <ul id="results"></ul>
           </div>
