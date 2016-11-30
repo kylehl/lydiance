@@ -15,17 +15,6 @@ function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyAYquJl6tEYy2oMlNjXGneGKC7qJfCgTXA');
 }
 
-// Wait for button trigger
-$('#search-button').click(function() {
-    if ($.trim($('#query').val()) === "") {
-        alert('You did not fill out the required fields.');
-        return false;
-    }
-	else {
-		$('.ytlist').slideDown("fast");
-	}
-});
-
 function search(entry) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
