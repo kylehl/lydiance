@@ -19,7 +19,10 @@ function onClickSearch(entry) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
-        q: entry
+        q: entry,
+		maxResults: 10,
+		type: 'video',
+		videoCategoryId: 10 // search for music only
     });
     
     // Send the request to the API server,
