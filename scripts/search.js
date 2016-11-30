@@ -18,11 +18,12 @@ function onYouTubeApiLoad() {
 // Wait for button trigger
 $(document).ready(function(){
     $('#search-button').click(function(){
-		if ($.trim($("#query").val()) === "") {
+		if ($.trim($('#query').val()) === '') {
 			alert('You did not fill out the required field.');
 			return false;
 		}
 		else {
+			$('.ytlist').slideDown("fast");
 			var entry = document.getElementById('query').value;
 			search(entry);
 		}

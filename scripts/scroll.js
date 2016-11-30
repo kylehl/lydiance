@@ -12,9 +12,3 @@ $(function() {
     }
   });
 });
-
-$(document).ready(function() {
-    $('#showlist').click(function() {
-         $('.ytlist').slideDown("fast");
-    });
-});
