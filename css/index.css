@@ -1,4 +1,4 @@
-#need-padding { padding-top: 40px; }
+#need-padding { padding-top: 60px; }
 @media screen and (max-width: 768px) {
     #need-padding { padding-top: 0px; }
 }
