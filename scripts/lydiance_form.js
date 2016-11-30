@@ -7,6 +7,6 @@ $('#search-button').submit(function() {
 	else {
 		var entryText = document.getElementById('query').value;
 		$('.ytlist').slideDown("fast");
-		search(entryText);
+		onClickSearch(entryText);
 	}
 });

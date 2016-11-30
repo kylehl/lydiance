@@ -15,7 +15,7 @@ function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyAYquJl6tEYy2oMlNjXGneGKC7qJfCgTXA');
 }
 
-function search(entry) {
+function onClickSearch(entry) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
