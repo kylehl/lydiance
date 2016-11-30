@@ -44,9 +44,7 @@ function handleAuthResult(authResult) {
   }
 }
 
-// Load the client interfaces for the YouTube Analytics and Data APIs, which
-// are required to use the Google APIs JS client. More info is available at
-// http://code.google.com/p/google-api-javascript-client/wiki/GettingStarted#Loading_the_Client
+// Load the client interfaces for the YouTube Analytics and Data APIs
 function loadAPIClientInterfaces() {
   gapi.client.load('youtube', 'v3', function() {
     //handleAPILoaded();
