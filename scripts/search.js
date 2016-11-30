@@ -16,14 +16,11 @@ function onYouTubeApiLoad() {
 }
 
 // Wait for button trigger
-$(document).ready(function(){
-    $('#search-button').click(function(){
-		if ($.trim($('#query').val()) === '') {
-			alert('You did not fill out the required field.');
-			return false;
-		}
-		
-    });
+$('#search-button').submit(function() {
+    if ($.trim($("#query").val()) === "") {
+        alert('You did not fill out the required fields.');
+        return false;
+    }
 });
 
 function search(entry) {
