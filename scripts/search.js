@@ -17,7 +17,7 @@ function onYouTubeApiLoad() {
 
 // Wait for button trigger
 $('#search-button').click(function() {
-    if ($.trim($('.query').val()) === "") {
+    if ($.trim($('#query').val()) === "") {
         alert('You did not fill out the required fields.');
         return false;
     }
