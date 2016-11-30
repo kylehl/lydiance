@@ -22,11 +22,7 @@ $(document).ready(function(){
 			alert('You did not fill out the required field.');
 			return false;
 		}
-		else {
-			$('.ytlist').slideDown("fast");
-			var entry = document.getElementById('query').value;
-			search(entry);
-		}
+		
     });
 });
 
