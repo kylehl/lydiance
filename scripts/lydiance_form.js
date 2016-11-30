@@ -7,6 +7,7 @@ $(document).ready(function() {
 		}
 		else {
 			var entryText = document.getElementById('query').value;
+			$('.post-auth').slideUp("slow");
 			$('.ytlist').slideDown("fast");
 			onClickSearch(entryText);
 		}
