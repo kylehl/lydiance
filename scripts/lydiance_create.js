@@ -3,7 +3,7 @@ var playlistId, playlistLength, accLength;
 
 // Create playlist
 function createPlaylist(id, privacy, length, name) {
-  playlistLength = length;
+  playlistLength = parseInt(length, 10);
   var request = gapi.client.youtube.playlists.insert({
     part: 'snippet,status',
     resource: {
