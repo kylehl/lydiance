@@ -35,10 +35,10 @@ $(document).ready(function() {
 // for highlighting search results in step 2
 $(document).ready(function() {
 	var classHighlight = 'active';
-	var $thumbs = $('.search-result').click(function(e) {
+	$("ul").on("click", ".search-result", function(e) {
 		e.preventDefault();
-		$thumbs.removeClass(classHighlight);
-		$thumbs.removeAttr('id');
+		$(".search-result").removeClass(classHighlight);
+		$(".search-result").removeAttr('id');
 		//add the class to the currently clicked element (this)
 		$(this).addClass(classHighlight);
 		$(this).attr('id', 'selected');
