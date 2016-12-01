@@ -100,6 +100,7 @@ function addNextToPlaylist(id) {
 	var result = response.result;
     if (!result) {
 	  alert('Could not add next.');
+	}
   });
 }
 
