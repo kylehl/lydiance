@@ -20,7 +20,7 @@ function createPlaylist(id, privacy, length, name) {
     var result = response.result;
     if (result) {
       playlistId = result.id;
-	  console.log(playlistId); //testing
+	  console.log('playlistId: '+playlistId); //testing
 	  $("a[href='https://www.youtube.com/']").attr('href', 'https://www.youtube.com/playlist?list='+playlistId);
 	  addSeedToPlaylist(id);
     } else {
@@ -48,6 +48,7 @@ function addSeedToPlaylist(id) {
 	var result = response.result;
     if (result) {
 	  accLength = 0;
+	  console.log('seedId: '+id);
 	  addRelatedContent(id);
     } else {
       alert('Could not add seed.');
@@ -75,6 +76,7 @@ function addRelatedContent(id) {
 	request.execute(function(response) {
 		var result = response.result.items;
 		var nextAdd = result[pickNum].id.videoId; // get next video ID
+		console.log('nextAdd: '+nextAdd);
 		accLength += getDuration(nextAdd); // add to accumulated time
 		addNextToPlaylist(nextAdd);
 		addRelatedContent(nextAdd);
@@ -108,7 +110,7 @@ function addNextToPlaylist(id) {
 function getDuration(vidId) {
 	var request = gapi.client.youtube.video.list({
         part: 'contentDetails',
-		id: vidId,
+		id: vidId
     });
 	
 	var duration;
