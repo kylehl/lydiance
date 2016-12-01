@@ -1,10 +1,5 @@
 .top-buffer { margin-top:40px; }
 
-.highlight {
-    background-color: cyan;
-    font-weight: bold;
-}
-
 #image-select {
 	float:right;
 }

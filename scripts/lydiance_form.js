@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 // for highlighting search results in step 2
 $(document).ready(function() {
-	var classHighlight = 'highlight';
+	var classHighlight = 'active';
 	var $thumbs = $('.search-result').click(function(e) {
 		e.preventDefault();
 		$thumbs.removeClass(classHighlight);
