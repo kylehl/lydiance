@@ -39,7 +39,7 @@ function onSearchResponse(response) {
 		vidTitle = item.snippet.title;  
 		vidThumburl =  item.snippet.thumbnails.high.url;
 		vidId = 'placeholder';
-		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><a class="btn btn-lg btn-default search-result" href="#contact" id="image-select" value="'+vidId+'">Select</a></pre>';                   
+		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><a class="btn btn-lg btn-default search-result" id="image-select" value="'+vidId+'">Select</a></pre>';                   
 
 		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
 	});
