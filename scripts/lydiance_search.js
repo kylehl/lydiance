@@ -49,7 +49,6 @@ function getVideoId(response) {
 	var srchItems = response.result.items;
 	$.each(srchItems, function(index, item){
 		sVideoIds[index] = item.id.videoId;
-		console.log(sVideoIds[index]);
 	});
 }
 
@@ -61,8 +60,7 @@ function onSearchResponse(response) {
 		var vidTitle = item.snippet.title;
 		var vidThumburl =  item.snippet.thumbnails.high.url;
 		var vidId = sVideoIds[index];
-		console.log(vidId);
-		var vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><button type="button" class="btn btn-lg btn-default search-result" name="image-select" id="image-select" value="'+vidId+'">Select</button></pre>';                   
+		var vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><button type="button" class="btn btn-lg btn-default search-result" name="image-select" value="'+vidId+'">Select</button></pre>';                   
 
 		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
 	});
