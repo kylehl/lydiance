@@ -22,6 +22,7 @@ $(document).ready(function() {
 			return false;
 		}
 		else {
+			var id = document.getElementById('image-select').value;
 			var privacy = document.getElementById('button-1').value;
 			var length = document.getElementById('button-2').value;
 			var name = document.getElementById('playlist-name').value;
@@ -37,8 +38,10 @@ $(document).ready(function() {
 	var $thumbs = $('.search-result').click(function(e) {
 		e.preventDefault();
 		$thumbs.removeClass(classHighlight);
+		$thumbs.removeAttr('id');
 		//add the class to the currently clicked element (this)
 		$(this).addClass(classHighlight);
+		$(this).attr('id', 'image-select');
 	});
 });
 
