@@ -1,4 +1,4 @@
-// Check if form is empty
+// Check if form in step 1 is empty
 $(document).ready(function() {
 	$('#search-button').click(function() {
 		if ($.trim($("#query").val()) === '') {
@@ -10,6 +10,19 @@ $(document).ready(function() {
 			$('.post-auth').slideUp("slow");
 			$('.ytlist').slideDown("fast");
 			onClickSearch(entryText);
+		}
+	});
+});
+
+// Check if form in step 2 is empty
+$(document).ready(function() {
+	$('#create-button').click(function() {
+		if ($.trim($("#playlist-name").val()) === '') {
+			alert('You did not fill out the required fields.');
+			return false;
+		}
+		else {
+			
 		}
 	});
 });
