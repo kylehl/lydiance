@@ -39,6 +39,6 @@ function onSearchResponse(response) {
 		vidThumburl =  item.snippet.thumbnails.high.url;
 		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"></pre>';                   
 
-		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
+		$('#results').append('<div class="search-result"><pre>' + vidTitle + vidThumbimg + '</pre></div>');
 	});
 }
