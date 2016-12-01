@@ -4,3 +4,7 @@
     background-color: cyan;
     font-weight: bold;
 }
+
+#image-select {
+	float:right;
+}
