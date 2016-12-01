@@ -15,6 +15,7 @@ function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyAYquJl6tEYy2oMlNjXGneGKC7qJfCgTXA');
 }
 
+// Below is the chain of functions from clicking Go in the search bar
 function onClickSearch(entry) {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
@@ -37,8 +38,13 @@ function onSearchResponse(response) {
 	$.each(srchItems, function(index, item){
 		vidTitle = item.snippet.title;  
 		vidThumburl =  item.snippet.thumbnails.high.url;
-		vidThumbimg = '<pre class="search-result"><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"></pre>';                   
+		vidId = 'placeholder';
+		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><a class="btn btn-lg btn-default search-result" href="#" id="image-select" value="'+vidId+'">Select</a></pre>';                   
 
 		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
 	});
+}
+
+// next API call from snippet search to id search
+function getVideoId() {
 }
