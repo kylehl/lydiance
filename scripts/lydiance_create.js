@@ -108,7 +108,7 @@ function addNextToPlaylist(id) {
 
 // get duration of specified video
 function getDuration(vidId) {
-	var request = gapi.client.youtube.video.list({
+	var request = gapi.client.youtube.videos.list({
         part: 'contentDetails',
 		id: vidId
     });
