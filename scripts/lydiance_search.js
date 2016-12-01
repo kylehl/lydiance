@@ -33,7 +33,7 @@ function onClickSearch(entry) {
 // Called automatically with the response of the YouTube API request.
 function onSearchResponse(response) {
     $('#results').empty();
-	var srchItems = response.result.items;                      
+	var srchItems = response.result.items;
 	$.each(srchItems, function(index, item){
 		vidTitle = item.snippet.title;  
 		vidThumburl =  item.snippet.thumbnails.high.url;
