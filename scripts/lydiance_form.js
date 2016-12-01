@@ -26,7 +26,7 @@ $(document).ready(function() {
 			var privacy = document.getElementById('button-1').value;
 			var length = document.getElementById('button-2').value;
 			var name = document.getElementById('playlist-name').value;
-			alert(privacy + length + name);
+			alert(id +' '+ privacy +' '+ length +' '+ name);
 			//createPlaylist(privacy, length, name);
 		}
 	});
