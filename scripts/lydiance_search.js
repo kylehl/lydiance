@@ -57,10 +57,10 @@ function onSearchResponse(response) {
 	var srchItems = response.result.items;
 	
 	$.each(srchItems, function(index, item){
-		vidTitle = item.snippet.title;
-		vidThumburl =  item.snippet.thumbnails.high.url;
-		vidId = sVideoIds[index];
-		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><button type="button" class="btn btn-lg btn-default search-result" name="image-select" id="image-select" value="'+vidId+'">Select</button></pre>';                   
+		var vidTitle = item.snippet.title;
+		var vidThumburl =  item.snippet.thumbnails.high.url;
+		var vidId = sVideoIds[index];
+		var vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"><button type="button" class="btn btn-lg btn-default search-result" name="image-select" id="image-select" value="'+vidId+'">Select</button></pre>';                   
 
 		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
 	});
