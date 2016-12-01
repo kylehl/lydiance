@@ -20,6 +20,8 @@ function createPlaylist(id, privacy, length, name) {
     var result = response.result;
     if (result) {
       playlistId = result.id;
+	  console.log(playlistId); //testing
+	  $("a[href='https://www.youtube.com/']").attr('href', 'https://www.youtube.com/playlist?list='+playlistId);
 	  addSeedToPlaylist(id);
     } else {
       alert('Could not create playlist.');
