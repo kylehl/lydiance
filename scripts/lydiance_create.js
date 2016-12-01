@@ -115,7 +115,7 @@ function getDuration(vidId) {
 	
 	request.execute(function(response) {
 		var result = response.result.items;
-		estDuration = Math.floor(moment.duration(result.contentDetails.duration).asMinutes());
+		estDuration = Math.floor(moment.duration(result.contentDetails.duration).hours() * 60 + moment.duration(result.contentDetails.duration).minutes());
 	});
 	return estDuration;
 }
