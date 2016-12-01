@@ -15,11 +15,12 @@ $(document).ready(function() {
 });
 
 // for highlighting search results in step 2
-var classHighlight = 'highlight';
-
-var $thumbs = $('.search-result').click(function(e) {
-    e.preventDefault();
-    $thumbs.removeClass(classHighlight);
-    //add the class to the currently clicked element (this)
-    $(this).addClass(classHighlight);
+$(document).ready(function() {
+	var classHighlight = 'highlight';
+	var $thumbs = $('.search-result').click(function(e) {
+		e.preventDefault();
+		$thumbs.removeClass(classHighlight);
+		//add the class to the currently clicked element (this)
+		$(this).addClass(classHighlight);
+	});
 });

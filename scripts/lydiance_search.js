@@ -37,8 +37,8 @@ function onSearchResponse(response) {
 	$.each(srchItems, function(index, item){
 		vidTitle = item.snippet.title;  
 		vidThumburl =  item.snippet.thumbnails.high.url;
-		vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"></pre>';                   
+		vidThumbimg = '<pre class="search-result"><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:auto;height:20%"></pre>';                   
 
-		$('#results').append('<div class="search-result"><pre>' + vidTitle + vidThumbimg + '</pre></div>');
+		$('#results').append('<pre>' + vidTitle + vidThumbimg + '</pre>');
 	});
 }
