@@ -24,3 +24,24 @@ $(document).ready(function() {
 		$(this).addClass(classHighlight);
 	});
 });
+
+// for highlighting button groups in step 2
+$(document).ready(function() {
+	var classActive = 'active';
+	var $buttons = $('.button-1').click(function(e) {
+		e.preventDefault();
+		$buttons.removeClass(classActive);
+		//add the class to the currently clicked element (this)
+		$(this).addClass(classActive);
+	});
+});
+
+$(document).ready(function() {
+	var classActive = 'active';
+	var $buttons = $('.button-2').click(function(e) {
+		e.preventDefault();
+		$buttons.removeClass(classActive);
+		//add the class to the currently clicked element (this)
+		$(this).addClass(classActive);
+	});
+});
