@@ -47,7 +47,7 @@ function addSeedToPlaylist(id) {
   request.execute(function(response) {
 	var result = response.result;
     if (result) {
-	  addRelatedContent(id, );
+	  addRelatedContent(id);
     } else {
       alert('Could not add seed.');
     }
