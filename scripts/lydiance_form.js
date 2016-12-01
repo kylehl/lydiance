@@ -22,12 +22,13 @@ $(document).ready(function() {
 			return false;
 		}
 		else {
+			$('.ytlist').slideUp("slow");
+			$('.finished').slideDown("fast");
 			var id = document.getElementById('selected').value;
 			var privacy = document.getElementById('button-1').value;
 			var length = document.getElementById('button-2').value;
 			var name = document.getElementById('playlist-name').value;
-			alert(id +' '+ privacy +' '+ length +' '+ name);
-			//createPlaylist(privacy, length, name);
+			createPlaylist(id, privacy, length, name);
 		}
 	});
 });

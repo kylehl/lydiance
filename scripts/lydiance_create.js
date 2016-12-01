@@ -1,18 +1,18 @@
 // Define some variables used to remember state.
-var playlistId, channelId;
+var playlistId, playlistLength;
 
 // Create playlist
-function createPlaylist(privacy, length, name) {
-  
+function createPlaylist(id, privacy, length, name) {
+  playlistLength = length;
   var request = gapi.client.youtube.playlists.insert({
     part: 'snippet,status',
     resource: {
       snippet: {
-        title: 'Test Playlist',
-        description: 'A private playlist created with the YouTube API'
+        title: name,
+        description: 'A playlist created using Lydiance through YouTube API. https://kylehl.github.io/lydiance/'
       },
       status: {
-        privacyStatus: 'private'
+        privacyStatus: privacy
       }
     }
   });
@@ -20,11 +20,39 @@ function createPlaylist(privacy, length, name) {
     var result = response.result;
     if (result) {
       playlistId = result.id;
-      $('#playlist-id').val(playlistId);
-      $('#playlist-title').html(result.snippet.title);
-      $('#playlist-description').html(result.snippet.description);
+	  addSeedToPlaylist(id);
     } else {
-      $('#status').html('Could not create playlist');
+      alert('Could not create playlist.');
     }
   });
+}
+
+// Adding seed
+function addSeedToPlaylist(id) {
+  var details = {
+	videoId: id,
+    kind: 'youtube#video'
+  }
+  var request = gapi.client.youtube.playlistItems.insert({
+    part: 'snippet',
+    resource: {
+      snippet: {
+        playlistId: playlistId,
+        resourceId: details
+      }
+    }
+  });
+  request.execute(function(response) {
+	var result = response.result;
+    if (result) {
+	  addRelatedContent(id, );
+    } else {
+      alert('Could not add seed.');
+    }
+  });
+}
+
+// Dynamically add related content
+function addRelatedContent(id) {
+	
 }
