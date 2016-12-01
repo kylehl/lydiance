@@ -22,7 +22,11 @@ $(document).ready(function() {
 			return false;
 		}
 		else {
-			
+			var privacy = document.getElementById('button-1').value;
+			var length = document.getElementById('button-2').value;
+			var name = document.getElementById('playlist-name').value;
+			alert(privacy + length + name);
+			//createPlaylist(privacy, length, name);
 		}
 	});
 });
@@ -44,8 +48,10 @@ $(document).ready(function() {
 	var $buttons = $('.button-1').click(function(e) {
 		e.preventDefault();
 		$buttons.removeClass(classActive);
+		$buttons.removeAttr('id');
 		//add the class to the currently clicked element (this)
 		$(this).addClass(classActive);
+		$(this).attr('id', 'button-1');
 	});
 });
 
@@ -54,7 +60,9 @@ $(document).ready(function() {
 	var $buttons = $('.button-2').click(function(e) {
 		e.preventDefault();
 		$buttons.removeClass(classActive);
+		$buttons.removeAttr('id');
 		//add the class to the currently clicked element (this)
 		$(this).addClass(classActive);
+		$(this).attr('id', 'button-2');
 	});
 });
