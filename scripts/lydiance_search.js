@@ -48,7 +48,7 @@ var sVideoIds = []; // global var array for search data
 function getVideoId(response) {
 	var srchItems = response.result.items;
 	$.each(srchItems, function(index, item){
-		sVideoIds[i++] = item.id.videoId;
+		sVideoIds[index] = item.id.videoId;
 	});
 }
 
