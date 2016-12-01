@@ -1,5 +1,7 @@
 .top-buffer { margin-top:40px; }
 
+.bot-buffer { margin-bottom:60px; }
+
 .search-result {
 	float:right;
 }
