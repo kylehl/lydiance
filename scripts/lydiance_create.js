@@ -26,16 +26,17 @@ function addNextToPlaylist(id) {
 
 // get duration of specified video
 function getDuration(vidId) {
-	var request = gapi.client.youtube.videos.list({
-        part: 'contentDetails',
-		id: vidId
-    });
+	// var request = gapi.client.youtube.videos.list({
+        // part: 'contentDetails',
+		// id: vidId
+    // });
 	
-	request.execute(function(response) {
-		var result = response.result.items;
-		estDuration = Math.floor(moment.duration(result.contentDetails.duration).hours() * 60 + moment.duration(result.contentDetails.duration).minutes());
-	});
-	return estDuration;
+	// request.execute(function(response) {
+		// var result = response.result.items;
+		// estDuration = Math.floor(moment.duration(result.contentDetails.duration).hours() * 60 + moment.duration(result.contentDetails.duration).minutes());
+	// });
+	// return estDuration;
+	return getRandomInt(2, 6); // temporary try fix
 }
 
 // Random number generator for related videos
