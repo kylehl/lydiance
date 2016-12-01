@@ -1,5 +1,5 @@
 // Define some variables used to remember state.
-var playlistId, playlistLength, accLength;
+var playlistId, playlistLength, accLength, estDuration;
 
 // Create playlist
 function createPlaylist(id, privacy, length, name) {
@@ -113,12 +113,11 @@ function getDuration(vidId) {
 		id: vidId
     });
 	
-	var duration;
 	request.execute(function(response) {
 		var result = response.result.items;
-		duration = Math.floor(moment.duration(result.contentDetails.duration).asMinutes());
+		estDuration = Math.floor(moment.duration(result.contentDetails.duration).asMinutes());
 	});
-	return duration;
+	return estDuration;
 }
 
 // Random number generator for related videos
